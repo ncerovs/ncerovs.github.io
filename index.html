@@ -11,8 +11,39 @@
       background: #f5f5f5;
     }
     h1 { color: #333; }
+    .li-buttons { margin-top: 30px; display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+    .li-btn {
+      padding: 12px 24px;
+      font-size: 15px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      color: #fff;
+      font-family: Arial, sans-serif;
+    }
+    .li-btn-pageview  { background: #0077b5; }
+    .li-btn-addtocart { background: #e8a000; }
+    .li-btn-purchase  { background: #2e7d32; }
+    .li-btn:hover { opacity: 0.85; }
   </style>
   <!-- TikTok Pixel Code Start -->
+<script type="text/javascript">
+_linkedin_partner_id = "10281753";
+window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
+window._linkedin_data_partner_ids.push(_linkedin_partner_id);
+</script><script type="text/javascript">
+(function(l) {
+if (!l){window.lintrk = function(a,b){window.lintrk.q.push([a,b])};
+window.lintrk.q=[]}
+var s = document.getElementsByTagName("script")[0];
+var b = document.createElement("script");
+b.type = "text/javascript";b.async = true;
+b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
+s.parentNode.insertBefore(b, s);})(window.lintrk);
+</script>
+<noscript>
+<img height="1" width="1" style="display:none;" alt="" src="https://px.ads.linkedin.com/collect/?pid=10281753&fmt=gif" />
+</noscript>
 <script>
 !function (w, d, t) {
   w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie","holdConsent","revokeConsent","grantConsent"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(
@@ -29,6 +60,27 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
 <body>
   <h1>Hello 👋</h1>
   <p>This is my test site.</p>
+
+  <div class="li-buttons">
+    <button class="li-btn li-btn-pageview"  onclick="liTrackPageView()">LinkedIn: PageView</button>
+    <button class="li-btn li-btn-addtocart" onclick="liTrackAddToCart()">LinkedIn: AddToCart</button>
+    <button class="li-btn li-btn-purchase"  onclick="liTrackPurchase()">LinkedIn: Purchase</button>
+  </div>
+
+  <script>
+    function liTrackPageView() {
+      lintrk('track', { conversion_id: '28097041' });
+      alert('LinkedIn PageView event fired');
+    }
+    function liTrackAddToCart() {
+      lintrk('track', { conversion_id: '28097049', value: 123.59 });
+      alert('LinkedIn AddToCart event fired (value: 123.59)');
+    }
+    function liTrackPurchase() {
+      lintrk('track', { conversion_id: '28097057', value: 123.59 });
+      alert('LinkedIn Purchase event fired (value: 123.59)');
+    }
+  </script>
   <script>
 // add this before event code to all pages where PII data postback is expected and appropriate 
 ttq.identify({
